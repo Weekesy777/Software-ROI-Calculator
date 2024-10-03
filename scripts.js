@@ -63,4 +63,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     calculateROI(); // Initial calculation
+
+    let elements = document.getElementsByClassName('toggle-slideout-menu');
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].addEventListener('click', function() {
+        const slideoutMenu = document.getElementById('slideoutMenu');
+            slideoutMenu.classList.toggle('open');
+        });
+    }
+
+    document.addEventListener('click', function(event) {
+        const slideoutMenu = document.getElementById('slideoutMenu');
+
+        if (slideoutMenu.classList.contains('open')) {
+            const isClickInside = slideoutMenu.contains(event.target) || event.target.classList.contains('toggle-slideout-menu');
+
+            if (!isClickInside) {
+                slideoutMenu.classList.remove('open');
+            }
+        }
+    });
 });

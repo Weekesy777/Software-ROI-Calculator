@@ -66,3 +66,30 @@ input[type="number"] {
 .input-group {
     display: flex;
 }
+
+.slideout-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #f9f9f9;
+    transition: right 0.3s ease;
+}
+
+.slideout-menu.open {
+    right: 0;
+}
+
+.settings-content {
+    padding: 20px;
+}
+
+.toggle-slideout-menu {
+    color: black;
+    border: none;
+    cursor: pointer;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
