@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Software ROI Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="text-center">
+            <h2>Custom Software ROI Calculator</h2>
+            <p>Estimate your potential savings and ROI from modernizing your business systems</p>
+        </div>
+
+        <div class="grid">
+            <!-- Assumed project cost -->
+            <div class="card">
+                <h3>Assumed Project Cost (AUD)</h3>
+                <input type="number" id="assumedProjectCost" value="75000">
+            </div>
+
+            <!-- Current process costs -->
+            <div class="card">
+                <h3>Number of Employees Using Manual Processes</h3>
+                <input type="number" id="employeesCount" value="10">
+                <h3>Average Hourly Rate (AUD)</h3>
+                <input type="number" id="avgHourlyRate" value="35">
+                <h3>Hours Spent on Manual Processes (per person/week)</h3>
+                <input type="number" id="hoursSpentManual" value="15">
+            </div>
+
+            <!-- Error and Growth Impact -->
+            <div class="card">
+                <h3>Average Cost per Error/Issue (AUD)</h3>
+                <input type="number" id="errorCost" value="500">
+                <h3>Number of Errors/Issues per Month</h3>
+                <input type="number" id="monthlyErrors" value="4">
+                <h3>Monthly Lost Growth Opportunity (AUD)</h3>
+                <input type="number" id="growthLoss" value="5000">
+            </div>
+        </div>
+
+        <div class="grid results">
+            <div class="card result">
+                <h3>Annual Labor Savings</h3>
+                <p id="laborSavings">$0</p>
+            </div>
+
+            <div class="card result">
+                <h3>Annual Error Savings</h3>
+                <p id="errorSavings">$0</p>
+            </div>
+
+            <div class="card result">
+                <h3>Growth Opportunity Value</h3>
+                <p id="growthOpportunity">$0</p>
+            </div>
+
+            <div class="card result">
+                <h3>Total Annual Savings</h3>
+                <p id="totalAnnualSavings">$0</p>
+            </div>
+
+            <div class="card result">
+                <h3>5-Year Savings</h3>
+                <p id="fiveYearSavings">$0</p>
+            </div>
+
+            <div class="card result">
+                <h3>First Year ROI</h3>
+                <p id="roi">0%</p>
+            </div>
+        </div>
+
+        <div class="alert">
+            <p>Based on industry averages and typical results. Actual savings may vary based on specific implementation and business factors.</p>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
