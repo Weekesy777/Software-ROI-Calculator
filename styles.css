@@ -19,6 +19,13 @@ body {
     gap: 20px;
 }
 
+/* on small screen make grid go across 1 column */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .card {
     background: #f9f9f9;
     padding: 15px;
