@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', function () {
         hoursSpentManual: 15,
         errorCost: 500,
         monthlyErrors: 4,
-        growthLoss: 5000
+        growthLoss: 5000,
+        laborSavingsReduction: 60,
+        errorSavingsReduction: 75,
+        growthSavingCapture: 80
     };
 
     const results = {
@@ -15,7 +18,10 @@ document.addEventListener('DOMContentLoaded', function () {
         growthOpportunity: 0,
         totalAnnualSavings: 0,
         fiveYearSavings: 0,
-        roi: 0
+        roi: 0,
+        labourSavingReduction: 0,
+        errorSavingReduction: 0,
+        growthSavingCapture: 0
     };
 
     const formatCurrency = (value) => {
@@ -25,13 +31,13 @@ document.addEventListener('DOMContentLoaded', function () {
     function calculateROI() {
         // Calculate labor savings
         const weeklyLaborHours = inputs.employeesCount * inputs.hoursSpentManual;
-        const annualLaborSavings = weeklyLaborHours * 52 * inputs.avgHourlyRate * 0.6; // Assuming 60% reduction
+        const annualLaborSavings = weeklyLaborHours * 52 * inputs.avgHourlyRate * (1 - inputs.laborSavingsReduction / 100);
 
         // Calculate error-related savings
-        const annualErrorSavings = inputs.errorCost * inputs.monthlyErrors * 12 * 0.75; // Assuming 75% reduction
+        const annualErrorSavings = inputs.errorCost * inputs.monthlyErrors * 12 * (1 - inputs.errorSavingsReduction / 100);
 
         // Calculate growth opportunity savings
-        const annualGrowthSavings = inputs.growthLoss * 12 * 0.8; // Assuming 80% capture
+        const annualGrowthSavings = inputs.growthLoss * 12 * (1 - inputs.growthSavingCapture / 100);
 
         // Calculate total savings and ROI
         const totalAnnual = annualLaborSavings + annualErrorSavings + annualGrowthSavings;
