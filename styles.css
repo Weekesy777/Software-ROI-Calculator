@@ -64,5 +64,4 @@ input[type="number"] {
 
 .input-group {
     display: flex;
-    flex-direction: column;
 }
