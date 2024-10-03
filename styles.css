@@ -61,3 +61,8 @@ input[type="number"] {
     margin-top: 20px;
     border-radius: 5px;
 }
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
